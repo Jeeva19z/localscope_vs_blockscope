@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Variables and Block-Scoped Variables</title>
+</head>
+<body>
+
+<h2>Local Variables:</h2>
+
+<p>Local variables are declared using the <code>var</code>, <code>let</code>, or <code>const</code> keyword inside a function.</p>
+<p>They are accessible only within the function in which they are declared.</p>
+<p>Local variables are created when the function is called and destroyed when the function exits.</p>
+
+<h3>Example:</h3>
+
+<pre><code class="language-javascript">function exampleFunction() {
+    var localVar = "I am a local variable";
+    console.log(localVar);
+}
+
+exampleFunction(); // Output: "I am a local variable"
+// console.log(localVar); // This will cause an error: "Uncaught ReferenceError: localVar is not defined"
+</code></pre>
+
+<hr>
+
+<h2>Block-Scoped Variables:</h2>
+
+<p>Block-scoped variables are declared using the <code>let</code> or <code>const</code> keyword within a block of code, such as an <code>if</code> statement or a loop.</p>
+<p>They are accessible only within the block in which they are declared, and they are not visible outside of that block.</p>
+<p>Block-scoped variables have a more limited scope compared to local variables, which are scoped to the entire function.</p>
+
+<h3>Example:</h3>
+
+<pre><code class="language-javascript">function exampleFunction() {
+    if (true) {
+        let blockVar = "I am a block-scoped variable";
+        console.log(blockVar);
+    }
+    // console.log(blockVar); // This will cause an error: "Uncaught ReferenceError: blockVar is not defined"
+}
+
+exampleFunction(); // Output: "I am a block-scoped variable"
+</code></pre>
+
+<p>So, while both local variables and block-scoped variables are scoped to a specific block of code, block-scoped variables have a narrower scope and are limited to the block in which they are declared. Additionally, block-scoped variables provide better control over variable visibility and help prevent unintended variable hoisting and leakage.</p>
+
+</body>
+</html>
